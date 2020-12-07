@@ -1,0 +1,40 @@
+﻿@model TalkForm
+
+@{
+
+}
+
+
+
+
+<div class="indexcontainer-edit">
+
+    <div id="zagl">
+        <label style="font-style:italic;font-weight:600;" id="titmoder-talkform">Ім`я доктора:</label>
+        
+    </div>
+    <div class="zagl">
+        <span id="zagl"> @Model.NameOfDoctor</span>
+    </div >
+    <div id="zagl">
+        <label style="font-style:italic;font-weight:600;">Поштова скринька:</label>
+        
+    </div>
+    <div class="zagl">
+        <span id="zagl"> @Model.Mail</span>
+    </div>
+
+    <div id="zagl">
+        <label style="font-style:italic;font-weight:600;">Текст листа:</label>
+
+    </div>
+    <div  class="zagl">
+        <span id="zagl"> @Model.Message</span>
+        
+    </div>
+   
+    <div >
+        <input id="inp" type="submit" value="Повернутися" onclick="history.back()"/>
+    </div>
+
+</div>

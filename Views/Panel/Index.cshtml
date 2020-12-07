@@ -1,0 +1,83 @@
+﻿@model PanelViewModel
+
+
+
+@{
+
+
+}
+
+
+@*<style>
+    form {
+        margin: 12px;
+    }
+</style>*@
+
+<div class="indexcontainer-index rounded" style="box-shadow: 0 0 5px 0 black;">
+    <div style="width:100%;">
+        <p>
+            <h5>
+                Панель Адміністрування
+            </h5>
+        </p>
+    </div>
+    @*<div class="zaglindexp">
+
+
+        </div>*@
+    <div class="zaglindex">
+        <a asp-controller="Panel" asp-action="Edit">Додати новину</a>
+        <ul>
+
+            @foreach (var post in Model.Posts)
+            {
+
+                <li>
+
+                    @post.Title
+
+                    -
+                    <a asp-controller="Panel" asp-action="Edit" asp-route-id="@post.Id">
+                        Змінити
+                    </a>
+                    -
+                    <a asp-controller="Panel" asp-action="Remove" asp-route-id="@post.Id">
+                        Видалити
+                    </a>
+                </li>
+
+            }
+
+        </ul>
+    </div>
+    @*<div class="zaglindexp">
+
+
+        </div>*@
+    <div class="zaglindexr">
+        <a asp-area="" asp-controller="Contact" asp-action="EditContact">Додати контакт</a>
+        <ul>
+
+            @foreach (var contact in Model.Contacts)
+            {
+
+                <li>
+
+                    @contact.LastName
+
+                    -
+                    <a asp-controller="Contact" asp-action="EditContact" asp-route-id="@contact.Id">
+                        Змінити
+                    </a>
+                    -
+                    <a asp-controller="Contact" asp-action="Remove" asp-route-id="@contact.Id">
+                        Видалити
+                    </a>
+                </li>
+
+            }
+
+        </ul>
+    </div>
+</div>

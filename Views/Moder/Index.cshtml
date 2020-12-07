@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TalkForm>
+
+@{
+
+
+}
+
+
+<div class="indexcontainer-moder rounded">
+    <div >
+        <h5>
+            Панель зв'язку з відвідувачами
+        </h5>
+    </div>
+
+    <div class="zaglmoderp table-responsive">
+        <br />
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th>Для доктора</th>
+
+                </tr>
+
+            </thead>
+
+        </table>
+
+        @foreach (var talkForm in Model)
+        {
+
+
+            <a style="margin-left:5px;" asp-controller="Moder" asp-action="FullTalkForm" asp-route-id="@talkForm.Id">
+
+                @talkForm.NameOfDoctor
+            </a>
+
+
+
+            <div class="container">
+                <a asp-controller="Moder" asp-action="Remove" asp-route-id="@talkForm.Id">
+                    Видалити
+                </a>
+
+            </div>
+            <hr align="center" width="100%" size="2" color="white" />
+
+        }
+        <hr align="center" width="100%" size="2" color="white" />
+    </div>
+   
+    </div>
+
+

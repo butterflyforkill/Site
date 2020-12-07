@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <environment include="Development">
+
+        <link href="~/css/site.css" rel="stylesheet" />
+    </environment>
+    
+    <environment include="Production">
+
+        <link href="~/css/site.min.css" rel="stylesheet" />
+    </environment>
+
+    <title>@ViewBag.Title</title>
+
+</head>
+
+<body style="background-image: url('../content/static/background40.jpg');">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 ">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Головна</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Державні закупівлі</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="TwentyNinteenzakup">2019</a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="Twentyeighteenzakup">2018</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Оголошення</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="TwentyTwentyogol">2020</a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="TwentyNinteenogol">2019</a>
+
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Відділення</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="PersheKardio">Перше кардіологічне відділення</a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="DrugeKardio">Друге кардіологічне відділення</a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="TreteKardio">Третє кардіологічне відділення</a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="ChetverteKardio">Четверте кардіологічне відділенняe</a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="PyateKardio">П`яте кардіологічне відділення</a>
+                            <a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-category="LikKonsl">Лікувально-консультативне відділення</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Home" asp-action="Contacts">Контакти</a>
+                    </li>
+                </ul>
+
+                <ul class="nav justify-content-end">
+
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+
+
+                            <div class="dropdown">
+                                <a class="btn btn-dark text-white" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Панель Адміністрування
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" asp-controller="Panel" asp-action="Index">Новини та сторінки</a>
+                                    <a class="dropdown-item" asp-controller="Moder" asp-action="Index">Листи відвідувачив</a>
+
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Auth" asp-action="Logout">Вийти</a></li>
+
+                    }
+                    else
+                    {
+                        <li><a class="navbar-brand" asp-controller="TalkForm" asp-action="Index">Звязатися з доктором</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" asp-controller="Auth" asp-action="Login">Ввійти</a></li>
+
+
+
+
+                    }
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main" class="m-1 p-1">
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <img src="~/content/static/slide1.jpg" class="d-block w-100" />
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <img src="~/content/static/slide2.jpg" class="d-block w-100" />
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <img src="~/content/static/slide3.jpg" class="d-block w-100" />
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <img src="~/content/static/slide4.jpg" class="d-block w-100" />
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </main>
+
+    <div class="m-3 p-3">
+        @RenderBody()
+    </div>
+    @RenderSection("scripts", false)
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted" @*style=" max-width:800px; width: 100%; position:center; padding: 0.5rem 0.5rem;  margin: 0.5rem;"*@>
+                Copyright &copy; 2020-2021 <a href="http://butterflyforkill-001-site1.ctempurl.com/">ВКМКЦМОЗУ</a> All Rights Reserved.<br />
+            </span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>

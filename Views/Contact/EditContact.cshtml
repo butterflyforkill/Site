@@ -1,0 +1,26 @@
+﻿@model Contact
+
+
+<div class="indexcontainer-edit" align="justify">
+
+    <form method="post">
+        <input asp-for="Id" type="hidden" />
+        <div class="zagl">
+            <label id="zagl">Ім'я</label>
+            <input id="tit" asp-for="FirstName" />
+        </div>
+        <div class="zagl">
+            <label id="zagl">Прізвище</label>
+            <input id="tit" asp-for="LastName" />
+        </div>
+        <div class="zagl">
+            <label id="zagl">Посада</label>
+            <input id="tit" asp-for="Mail" />
+        </div>
+        <div class="zagl">
+            <label id="zagl">Телефон</label>
+            <input id="tit" asp-for="Telephone" />
+        </div>
+        <input type="submit" value="Submit" />
+    </form>
+</div>

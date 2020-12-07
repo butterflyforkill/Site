@@ -1,0 +1,314 @@
+﻿
+@media (min-width: 40em) {
+    
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+}
+
+
+body {
+    margin: 0;
+    
+  
+}
+
+    main {
+        margin-top: -15px;
+        
+    }
+
+    /*for index-home*/
+
+    .indexcontainer {
+        max-width: 800px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin: auto;
+        background-color: #a9bbc1;
+        padding: 5px;
+        display: grid;
+
+        
+    }
+
+    .post {
+        
+        position: relative;
+        display: flex;
+        height: 400px;
+        width:100%;
+        max-width: 700px;
+        box-shadow: 0 0 5px 0 black;
+    }
+
+        .post img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+    .post-body {
+        margin: -5px 5px 0;
+       
+        width:100%;
+        max-width:500px;
+    }
+
+    .title {
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        /*left: 1000rem;*/
+        right: 60%;
+        transform: translateX(65%);
+        top: 30%;
+        text-shadow: 0 0 8px black;
+    }
+
+
+    /*======================================
+         edit in admin*/
+    .indexcontainer-edit {
+        max-width: 800px;
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin: auto;
+        background-color: #a9bbc1;
+        padding: 10px;
+        display: grid;
+       
+    }
+
+.zagl {
+    
+    margin: 2px;
+    width: 100%;
+}
+
+    #zagl {
+        margin-left: 5px;
+        width:100%;
+    }
+
+    #tit {
+       
+        margin-right: 1.5px;
+        margin-bottom: 12px;
+        width:100%;
+    }
+    #inp{
+        width:100%;
+    }
+  
+    /*======================================
+index in admin*/
+    .indexcontainer-index {
+        max-width: 800px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin: auto;
+        background-color: #a9bbc1;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content:center;
+     /*   grid-template-columns: 1fr 2fr 2fr;*/
+    }
+
+    .zaglindex {
+        width:100%;
+        margin-left: 5px;
+    }
+
+        .zaglindex a {
+            color: #0c6228;
+        }
+
+            .zaglindex a:hover {
+                color: #0d2530;
+                text-decoration: none;
+            }
+
+    .zaglindexr {
+        margin-left: 5px;
+        width:100%;
+    }
+
+        .zaglindexr a {
+            color: #0c6228;
+        }
+
+            .zaglindexr a:hover {
+                color: #0d2530;
+                text-decoration: none;
+            }
+
+    .zaglindexp {
+        margin-left: 5px;
+    }
+
+        .zaglindexp a {
+            color: #0c6228;
+        }
+
+            .zaglindexp a:hover {
+                color: #0d2530;
+                text-decoration: none;
+            }
+
+    #titindex {
+        border: 2px solid #0d2530;
+        margin: 2.5px;
+    }
+    /*======================================
+loginform*/
+    .indexcontainer-loginform {
+        max-width: 500px;
+        width: 60%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin: auto;
+        background-color: #a9bbc1;
+        padding: 10px;
+        display: grid;
+       
+    }
+
+    .zagllogin {
+        margin: 5px;
+        width:100%;
+    }
+
+    #zagllogin {
+        margin-left: 5px;
+    }
+
+    #titlogin {
+        margin-right: 2.2px;
+        margin-left:-5px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+        width:100%;
+    }
+    /*======================================
+
+moder index*/
+
+    .indexcontainer-moder {
+        max-width: 600px;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin: auto;
+        background-color: #a9bbc1;
+        padding: 10px;
+        display: grid;
+       /* grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 5px;*/
+    }
+
+    .zaglmoderp {
+        
+        margin-left: 5px;
+        width:100%;
+        text-align:left;
+        font-size:20px;
+        /*margin: 0px;*/
+    }
+
+
+
+        .zaglmoderp a {
+            color: #0c6228;
+        }
+
+            .zaglmoderp a:hover {
+                color: #0d2530;
+                text-decoration: none;
+            }
+
+
+    #titmoder {
+       
+        margin-right: 2.2px;
+        margin-top: 8px;
+    }
+
+    /*=========================*/
+    /*contacts*/
+
+
+
+    .indexcontainer-contacts {
+        max-width: 800px;
+        width: 90%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin: auto;
+        background-color: #a9bbc1;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-gap: 2px;
+        /*grid-template-columns: 1fr 5fr 2fr;*/
+        /*grid-template-rows: 1fr 5fr 2fr;*/
+    }
+
+    .zaglindex-contacts {
+        margin-left: 5px;
+        text-align: center;
+        width:100%
+    }
+
+    .cont {
+        font-weight: bold;
+        color: black;
+    }
+
+        .cont a:hover {
+            text-decoration: none;
+        }
+
+
+/*======================================
+pagination*/
+
+    .pages {
+        display: flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        justify-content: center;
+        margin: 0.5rem;
+        width:100%;
+    }
+
+        .pages a {
+            background-color: #146379;
+            color: white;
+            padding: 0.5rem 0.5rem;
+            
+            margin: 0 0.25rem;
+            margin-top:5px;
+        }
+
+            .pages a.active {
+                background-color: #538492;
+            }
+
+            .pages a:hover {
+                background-color: #81c2d4;
+                text-decoration: none;
+            }
+

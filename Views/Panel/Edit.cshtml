@@ -1,0 +1,74 @@
+﻿@model PostViewModel
+
+
+@{
+
+}
+
+<link href="~/lib/Trumbowyg-master/dist/ui/trumbowyg.min.css" rel="stylesheet" />
+
+<div class="indexcontainer-edit">
+
+    <form asp-controller="Panel" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input asp-for="Id" type="hidden" />
+        <div class="zagl">
+            <label id="zagl">Заголовок</label>
+            <input id="tit" class="form-control"  asp-for="Title" />
+        </div>
+        <div class="zagl">
+            <label>Категорія</label>
+
+            <select asp-for="Category" id="tit" class="form-control">
+                <optgroup label="Новини">
+                    <option value="Новини">Новини</option>
+                </optgroup>
+                <optgroup label="Відділення">
+                  
+                    <option value="PersheKardio">Перше кардіологічне</option>
+                    <option value="DrugeKardio">Друге кардіологічне</option>
+                    <option value="TreteKardio">Третє кардіологічне</option>
+                    <option value="ChetverteKardio">Четверте кардіологічне</option>
+                    <option value="PyateKardio">П'яте кардіологічне</option>
+                    <option value="LikKonsl">Лікувально-консультатівне</option>
+                </optgroup>
+                <optgroup label="Державні закупівлі">
+                    <option value="TwentyNinteenzakup">2019</option>
+                    <option value="Twentyeighteenzakup">2018</option>
+                </optgroup>
+                <optgroup label="Оголошення">
+                    <option value="TwentyTwentyogol">2020</option>
+                    <option value="TwentyNinteenogol">2019</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="zagl">
+            <label>Опис</label>
+
+            <textarea id="editor" asp-for="Text" class="form-control" ></textarea>
+        </div>
+        <div class="zagl">
+            <label asp-for="Image">Оберіть файл</label>
+            <input asp-for="Image" type="file" class="form-control-file" id="exampleFormControlFile1" >
+            <input asp-for="CurrentImage" type="hidden" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+
+
+        <div class="zagl">
+            <input type="submit" value="Submit" class="form-control" />
+        </div>
+
+
+    </form>
+</div>
+
+@section scripts{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="~/lib/Trumbowyg-master/dist/trumbowyg.js"></script>
+
+    <script>
+        $('#editor').trumbowyg({
+            imageWidthModalEdit: true
+        });
+    </script>
+}

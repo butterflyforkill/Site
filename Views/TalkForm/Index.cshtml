@@ -1,0 +1,42 @@
+﻿@model TalkForm
+
+@{
+
+
+}
+
+
+
+
+<div class="indexcontainer-edit rounded " align="justify">
+
+    <form method="post">
+        <input asp-for="Id" type="hidden" />
+        <div class="zagl" style="grid-area: 1 / 2 / 2 / 4; ">
+            <label id="zagl">Ім'я</label>
+            <input id="tit"  class="form-control"  asp-for="Name" />
+        </div>
+        <div class="zagl" style="grid-area: 2 / 2 / 3 / 4;">
+            <label id="zagl">Прізвище</label>
+            <input id="tit"  class="form-control"  asp-for="Surname" />
+        </div>
+        <div class="zagl" style="grid-area: 3 / 2 / 4 / 4;">
+            <label id="zagl">Електронна адреса</label>
+            <input id="tit"  class="form-control"  asp-for="Mail" />
+        </div>
+        <div class="zagl" style="grid-area: 4 / 2 / 5 / 4;">
+            <label id="zagl"> Доктор</label>
+            <select  class="form-control zagl"  asp-for="NameOfDoctor"  >
+                <option value="Красняньський">Красняньський</option>
+                <option value="Лич">Лич</option>
+
+            </select>
+        </div>
+        <div class="zagl" style="grid-area: 5/ 2 / 6 / 4;">
+            <label id="zagl">Повідомлення</label>
+
+            <textarea id="tit" class="form-control" asp-for="Message" cols="1" rows="2" size="12"></textarea>
+        </div>
+        <input  class="form-control"  type="submit" value="Відправити" />
+    </form>
+</div>

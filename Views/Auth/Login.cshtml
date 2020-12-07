@@ -1,0 +1,19 @@
+﻿@model LoginViewModel
+
+
+@{
+
+
+}
+
+<form class="indexcontainer-loginform" asp-controller="Auth" asp-action="Login" method="post">
+    <div class="zagllogin">
+        <label id="zagllogin">Логін </label>
+        <input id="titlogin" class="form-control" asp-for="UserName" />
+    </div>
+    <div class="zagllogin">
+        <label id="zagllogin">Пароль </label>
+        <input id="titlogin" class="form-control" asp-for="Password" type="password" />
+    </div>
+    <input  class="form-control" type="submit" value="Увійти" />
+</form>

@@ -1,0 +1,82 @@
+﻿@model IndexViewModel
+
+
+
+@{
+
+    var base_path = Context.Request.PathBase;
+}
+
+
+<div class="indexcontainer rounded">
+    <div class="m-3 p-3 " style="background-color: #a9bbc1;
+        /*box-shadow: 0 0 5px 0 black;*/">
+
+        @foreach (var post in Model.Posts)
+        {
+
+            var image_path = $"{base_path}/Image/{post.Image}";
+            <a class="post m-3 p-3 rounded " asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+
+
+                <img class="rounded" src="@image_path" />
+
+                <span class="title">
+                    @post.Title
+                </span>
+
+            </a>
+
+        }
+    </div>
+
+
+@*<div class="card-desk row-mb-2">
+    <div class="card row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+        @foreach(var post in Model.Posts) 
+        {
+
+                var image_path = $"{base_path}/Image/{post.Image}";
+
+                   <img src="@image_path" class="card-img-top" >
+
+                   <div class="card-body " asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
+
+                       <h5 class="card-title">@post.Title</h5>
+                       
+                   </div>
+         }
+    </div>
+    </div>*@
+
+
+
+
+    <div class="pages rounded">
+        @if (Model.PageNumber > 1)
+        {
+
+            <a class="rounded" asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category" asp-route-pageNumber="@(Model.PageNumber - 1)">Попередня</a>
+        }
+
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+
+
+            <a class="@(i == Model.PageNumber ? "active" : "") rounded" asp-action="Index" asp-controller="Home"
+               asp-route-category="@Model.Category"
+               asp-route-pageNumber="@i">@i</a>
+
+        }
+
+        @if (Model.NextPage)
+        {
+            <a class="rounded" asp-action="Index" asp-controller="Home" asp-route-category="@Model.Category" asp-route-pageNumber="@(Model.PageNumber + 1)">Наступна</a>
+        }
+    </div>
+
+    </div>
+
+
+
+

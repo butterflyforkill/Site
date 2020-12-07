@@ -1,0 +1,27 @@
+﻿@model Post
+
+@{
+    var base_path = Context.Request.PathBase;
+}
+
+
+
+
+<div class="indexcontainer rounded" style="width:100%;">
+    <div class="post rounded"  style="width:100%;">
+        @if (!String.IsNullOrEmpty(Model.Image))
+        {
+
+            var image_path = $"{base_path}/Image/{Model.Image}";
+        
+            <img class="rounded"  style="width:100%;" src="@image_path" />
+        
+            <span class="title">@Model.Title </span>
+
+        }
+    </div>
+    <div class="card-body" style="width:100%;">
+        @Html.Raw(Model.Text)
+
+    </div>
+</div>
